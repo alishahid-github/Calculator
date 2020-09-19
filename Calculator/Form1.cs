@@ -24,7 +24,19 @@ namespace Calculator
 
         private void add_operand(object sender, EventArgs e)
         {
-           
+            Button current_btn = (Button)sender;
+            if (current_btn.Text == ".")
+            {
+                if (!(valueTextBox.Text.Contains(".")))
+                    valueTextBox.Text += current_btn.Text;
+            }
+            else
+                valueTextBox.Text += current_btn.Text;
         }
+
+        public double first_operand;
+        public string C_operator="\0";
+        public double second_operand;
+        public bool is_first_find=false;
     }
 }
